@@ -1,8 +1,5 @@
 # Webpack ES6 and Sass compiler
-Use this config as a starter point to compile Javascript ES6 and Sass using webpack
-
-# SASS Compiler
-Webpack compile sass in a separate css file and use `Autoprefixer`
+Use this config as a starter point to compile Javascript ES6 and Sass using webpack. Webpack compile sass in a separate css file with `Autoprefixer`.
 
 ### First steps
 Dependencies installation:
