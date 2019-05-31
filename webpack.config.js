@@ -40,7 +40,7 @@ module.exports = {
                         loader: "postcss-loader"
                     },
                     {
-                        loader: "sass-loader"
+                        loader: "sass-loader" //1. Turns sass into css
                     }
                 ]
             }
