@@ -1,14 +1,14 @@
 const path = require('path');
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: {
         app: "./app.js",
         vendor: "./src/vendor.js",
         main: "./sass/main.scss"
     },
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "cms/user/template/test/scripts.group"),
         filename: "[name].js"
     },
     module: {
@@ -29,7 +29,7 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            name: "./css/[name].css",
+                            name: "../style.group/[name].css",
                         }
                     },
                     {
