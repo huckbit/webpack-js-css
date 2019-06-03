@@ -2,16 +2,19 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: ['./app.js', './sass/main.scss'],
+    entry: {
+        app: "./app.js",
+        vendor: "./src/vendor.js",
+        main: "./sass/main.scss"
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 loader: "babel-loader",
                 query: {
                     presets: [
@@ -21,13 +24,12 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: /node_modules/,
                 enforce: "pre",
                 use: [
                     {
                         loader: "file-loader",
                         options: {
-                            name: "css/main.css",
+                            name: "css/[name].css",
                         }
                     },
                     {
