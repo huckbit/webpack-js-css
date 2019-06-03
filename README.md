@@ -36,10 +36,17 @@ link the the app inside the project:
 Use the minified version using mode -> production
 
 ### link css 
-```html
+```$html
 <link rel="stylesheet" href="dist/css/main.css">
 ```
 
 ### NOTE: change mode to production before for production
+
+If the file name it's the same for both the javascript and css files, for example `main.js` and `main.css` use:
+```$javascript
+entry: {
+  main: ["./main.js","./sass/main.scss"],  
+}
+```
 
 ###### Last update 24th of May 2019
