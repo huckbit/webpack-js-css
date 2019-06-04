@@ -1,5 +1,6 @@
 # Webpack ES6 and Sass compiler
-Use this config as a starter point to compile Javascript ES6 and Sass using webpack. Webpack compile sass in a separate css file with `Autoprefixer` and `source map`.
+Use this config as a starter point to compile Javascript ES6 and Sass using webpack. 
+In this configuration, webpack compiles sass in a separate css file with `Autoprefixer` and `source map`.
 
 ### Build and watch the project
 To start watching and compile the app run:
