@@ -9,28 +9,28 @@ npm run webpack
 ```
 
 ### Configuration file
-Modify the webpack configuration file `webpack.config.js` to change or add more options. [Official doc](https://webpack.js.org/concepts/)
+Modify the webpack configuration file `webpack.config.js` to change or add more functionality. [Official doc](https://webpack.js.org/concepts/)
 
-## Change mode to production to minify
+## Change mode to production to minify the code
 #### Mode production/development
-Bye default webpack is set to `development` change inside `webpack.config.js` the property mode from `development` to `production` this will also minify all the javascript and css files.
+By default, webpack is set to `development` change inside `webpack.config.js` the property mode from `development` to `production` this will also minify all the javascript and css files.
 
-### link the app
+### link app and vendor files
 link the app inside the project:
 
 ```html
 <script src="dist/app.js"></script>
 <script src="dist/vendor.js"></script>
 ```
-Use the minified version using mode -> production
 
-### link css 
+
+### link css file
 ```$html
 <link rel="stylesheet" href="dist/css/main.css">
 ```
 
 
-If the file name it's the same for both the javascript and css files, for example `main.js` and `main.css` use:
+If the file name it's the same for both, javascript and css files (for example `main.js` and `main.css`) use:
 ```$javascript
 entry: {
   main: ["./main.js","./sass/main.scss"],  
