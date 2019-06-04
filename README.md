@@ -1,12 +1,6 @@
 # Webpack ES6 and Sass compiler
 Use this config as a starter point to compile Javascript ES6 and Sass using webpack. Webpack compile sass in a separate css file with `Autoprefixer`.
 
-### First steps
-Dependencies installation:
-```shell
-npm install
-```
-
 ### sass partial file
 Use full path to include a partial
 ```$sass
@@ -20,6 +14,11 @@ To start watching and compile the app run:
 npm run webpack
 ```
 
+use [Expression Engine](https://docs.expressionengine.com/latest/templates/globals/stylesheet.html) configuration run:
+```shell
+npm run webpack-ee
+```
+
 ### Configuration file
 Modify the webpack configuration file `webpack.config.js` to change or add more options. [Official doc](https://webpack.js.org/concepts/)
 
@@ -31,7 +30,7 @@ Bye default webpack is set to `development` change inside `webpack.config.js` th
 link the the app inside the project:
 
 ```html
-<script src="dist/app.bundle.js"></script>
+<script src="dist/app.js"></script>
 ```
 Use the minified version using mode -> production
 
@@ -49,4 +48,4 @@ entry: {
 }
 ```
 
-###### Last update 24th of May 2019
+###### Last update 4th of June 2019
