@@ -4,7 +4,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: {
         app: "./app.js",
         vendor: "./src/vendor.js",
@@ -15,7 +15,10 @@ module.exports = {
         filename: "[name].js"
     },
     optimization: {
-        minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
+        minimizer: [
+            new OptimizeCssAssetsPlugin({cssProcessorOptions: {map: {inline: false}}}),
+            new TerserPlugin()
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin({filename: "./css/[name].css",}),
@@ -35,9 +38,20 @@ module.exports = {
                 test: /\.scss$/,
                 enforce: "pre",
                 use: [
-                    MiniCssExtractPlugin.loader, //3. Extract css into files
-                    "css-loader", //2 Turns css into javascript
-                    "sass-loader" //1. Turns sass into css
+                    MiniCssExtractPlugin.loader, //4. Extract css into files
+                    "css-loader", //3 Turns css into javascript
+                    {
+                        loader: "postcss-loader",  //2. Runs Autoprefixer
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')({
+                                    'browsers': ['> 1%', 'last 2 versions']
+                                }),
+                            ]
+                        }
+                    },
+                    "sass-loader", //1. Turns sass into css
                 ]
             }
         ]
