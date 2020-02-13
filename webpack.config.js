@@ -6,9 +6,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
     mode: "development",
     entry: {
-        app: "./app.js",
-        vendor: "./src/vendor.js",
-        main: "./sass/main.scss"
+        app: "./src/js/app.js",
+        vendor: "./src/js/vendor.js",
+        main: "./src/sass/main.scss"
     },
     output: {
         path: path.resolve(__dirname, "dist"),
